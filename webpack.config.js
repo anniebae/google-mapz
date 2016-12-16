@@ -3,26 +3,13 @@ var path = require("path");
 
 module.exports = {
 	entry: {
-		app: "./public/app/App.js"
+		app: "./src/app.js"
 	},
 	output: {
-		filename: "public/build/bundle.js",
-		sourceMapFilename: "public/build/bundle.js"
+		filename: "build/bundle.js",
+		sourceMapFilename: "build/bundle.js"
 	},
 	devtool: '#source-map',
-	plugins: process.env.NODE_ENV === 'production' ? [
-		new webpack.DefinePlugin({
-			'process.env': {
-				'NODE_ENV': JSON.stringify('production')
-			}
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			minimize: true,
-			compress: {
-				warnings: true
-			}
-		})
-	] : [],
 	module: {
 		loaders: [
 			{
