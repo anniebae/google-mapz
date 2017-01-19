@@ -11,7 +11,6 @@ class App extends Component {
 				<div style={{width:300, height:600, background:'red'}}>
 					<Map />
 				</div>
-
 				<Places />
 			</div>
 		)
