@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Map from './Components/Map'
+import Map from './components/Map'
+import Places from './components/Places'
 
 class App extends Component {
 	render() {
@@ -8,6 +9,7 @@ class App extends Component {
 			<div>
 				This is the REACT APP!
 				<Map />
+				<Places />
 			</div>
 		)
 	}
