@@ -8,7 +8,10 @@ class App extends Component {
 		return (
 			<div>
 				This is the REACT APP!
-				<Map />
+				<div style={{width:300, height:600, background:'red'}}>
+					<Map />
+				</div>
+
 				<Places />
 			</div>
 		)
