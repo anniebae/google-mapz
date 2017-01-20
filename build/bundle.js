@@ -84,6 +84,12 @@
 		_createClass(App, [{
 			key: 'render',
 			value: function render() {
+	
+				var location = {
+					lat: 40.7575285,
+					lng: -73.9884469
+				};
+	
 				return _react2.default.createElement(
 					'div',
 					null,
@@ -91,7 +97,7 @@
 					_react2.default.createElement(
 						'div',
 						{ style: { width: 300, height: 600, background: 'red' } },
-						_react2.default.createElement(_Map2.default, null)
+						_react2.default.createElement(_Map2.default, { center: location })
 					),
 					_react2.default.createElement(_Places2.default, null)
 				);
@@ -21834,11 +21840,14 @@
 		_createClass(Map, [{
 			key: 'render',
 			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					'This is the Map Component'
-				);
+				var mapContainer = _react2.default.createElement('div', { style: { height: '100%', width: '100%' } });
+	
+				return _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
+					containerElement: mapContainer,
+					googleMapElement: _react2.default.createElement(_reactGoogleMaps.GoogleMap, {
+						defaultZoom: 15,
+						defaultCenter: this.props.center,
+						options: { streetViewControl: false, mapTypeControl: false } }) });
 			}
 		}]);
 	
