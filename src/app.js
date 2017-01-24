@@ -4,6 +4,10 @@ import Map from './components/Map'
 import Places from './components/Places'
 
 class App extends Component {
+	componentDidMount() {
+		console.log('componentDidMount')
+	}
+
 	render() {
 		const location = {
 			lat: 40.7575285,
@@ -15,6 +19,12 @@ class App extends Component {
 				location: {
 					lat: 40.7575285,
 					lng: -73.9884469
+				}
+			},
+			{
+				location: {
+					lat: 40.7484405,
+					lng: -73.9878531
 				}
 			}
 		]
