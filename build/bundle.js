@@ -116,13 +116,6 @@
 					lng: -73.9884469
 				};
 	
-				var markers = [{
-					location: {
-						lat: 40.7575285,
-						lng: -73.9884469
-					}
-				}];
-	
 				return _react2.default.createElement(
 					'div',
 					null,
@@ -130,7 +123,7 @@
 					_react2.default.createElement(
 						'div',
 						{ style: { width: 300, height: 600, background: 'red' } },
-						_react2.default.createElement(_Map2.default, { center: location, markers: markers })
+						_react2.default.createElement(_Map2.default, { center: location, markers: this.state.venues })
 					),
 					_react2.default.createElement(_Places2.default, { venues: this.state.venues })
 				);
