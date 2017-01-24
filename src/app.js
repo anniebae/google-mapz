@@ -5,6 +5,13 @@ import Places from './components/Places'
 import superagent from 'superagent'
 
 class App extends Component {
+	constructor() {
+		super()
+		this.state = {
+			venues: []
+		}
+	}
+
 	componentDidMount() {
 		console.log('componentDidMount')
 
@@ -15,9 +22,12 @@ class App extends Component {
 		.query(null)
 		.set('Accept', 'text/json')
 		.end((error, response) => {
-
-			console.log(JSON.stringify(response.body))
-
+			
+			const venues = response.body.response.venues
+			console.log(JSON.stringify(venues))
+			this.setState({
+				venues: venues
+			})
 		})
 	}
 
@@ -43,7 +53,7 @@ class App extends Component {
 					<Map center={location}  markers={markers} />
 				</div>
 
-				<Places />
+				<Places venues={this.state.venues} />
 			</div>
 		)
 	}
