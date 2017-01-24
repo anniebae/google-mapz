@@ -21884,7 +21884,7 @@
 					googleMapElement: _react2.default.createElement(
 						_reactGoogleMaps.GoogleMap,
 						{
-							defaultZoom: 15,
+							defaultZoom: 16,
 							defaultCenter: this.props.center,
 							options: { streetViewControl: false, mapTypeControl: false } },
 						markers
